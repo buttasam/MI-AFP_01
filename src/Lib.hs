@@ -39,7 +39,7 @@ distance2D (x1, y1) (x2, y2) = sqrt ((x1 - x2) ^ 2 + (y1 - y2) ^ 2)
 --  The if-then-else is expression as any other in Haskell, try to be DRY)
 natToBinstring :: Word -> String
 natToBinstring 0 = "" -- no need to change this, end of recursion
-natToBinstring x = if True then "" else ""
+natToBinstring x = natToBinstring(div x 2) ++ show (mod x 2)
 
 -- #07 = Lookup function that splits string to list of words (again strings)
 stringSplitToWords :: String -> [String]
